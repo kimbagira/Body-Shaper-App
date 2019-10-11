@@ -3,48 +3,44 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
 
+    <!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:src="@drawable/image1"-->
+<!--        android:scaleType="centerCrop" />-->
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="51dp"
         android:text="Body-Shaper-App"
-        android:textColor="@color/colorPrimaryLight" />
+        android:textColor="@color/colorPrimaryDark" />
 
-<!--    <ImageView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:id="@+id/imageView"-->
-
-<!--        android:scaleType="centerCrop" />-->
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/locationEditText1"
-        android:layout_below="@+id/textView"
-        android:background="@color/colorTextIcons"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp"
-        android:hint="Enter your email"
-        android:layout_centerHorizontal="true" />
-
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/locationEditText2"
-        android:layout_below="@+id/locationEditText1"
-        android:background="@color/colorTextIcons"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="124dp"
         android:layout_marginBottom="10dp"
-        android:padding="5dp"
+        android:background="@color/colorTextIcons"
+        android:hint="Enter your email"
+        android:padding="5dp" />
+
+    <EditText
+        android:id="@+id/locationEditText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locationEditText1"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorTextIcons"
         android:hint="Enter your password"
-        android:layout_centerHorizontal="true" />
-
-
-
-
+        android:padding="5dp" />
 
     <Button
         android:id="@+id/loginButton"
