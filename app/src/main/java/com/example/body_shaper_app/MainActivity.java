@@ -17,9 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        AboutUsPage = (Button)findViewById(R.id.button);
-
-//        fitnessEditText = (EditText) findViewById(R.id.fitnessEditText);
 
         mLoginButton = (Button) findViewById(R.id.loginButton);
         mLoginButton.setOnClickListener(new View.OnClickListener() {

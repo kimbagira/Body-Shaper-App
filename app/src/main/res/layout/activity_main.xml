@@ -3,12 +3,12 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
 
-    <!--    <ImageView-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:id="@+id/imageView"-->
-    <!--        android:src="@drawable/image1"-->
-    <!--        android:scaleType="centerCrop" />-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView"
+            android:src="@drawable/kimba1"
+            android:scaleType="centerCrop" />
 
 
     <TextView
