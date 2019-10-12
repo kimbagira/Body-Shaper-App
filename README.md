@@ -27,7 +27,7 @@ output
 *body types and sports .
 
 ## LINK OF MY REPOSITORY
-
+https://github.com/kimbagira/Body-Shaper-App
 
 ## BUGS
   no bugs
