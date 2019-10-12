@@ -16,7 +16,7 @@ to log in by entering your email and password
 
 behaviour
 
-*go to the application, enter the required.
+*go to the application, enter the required
 
 input
 
