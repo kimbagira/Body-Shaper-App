@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:id="@+id/image1"-->
+    <!--        android:src="@drawable/image4"-->
+    <!--        android:scaleType="centerCrop" />-->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+
+        android:layout_marginTop="3dp"
+        android:text="How To Determine your Body Type you are."
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="Everyone’s body is different. there are actually 3 body types  and their descriptions "
+        android:textColor="@color/colorPrimaryText" />
+
+
+    <TextView
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="-2dp"
+        android:background="@color/colorPrimary"
+        android:text="endomorph" />
+
+    <TextView
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="-1dp"
+        android:background="@color/colorPrimaryLight"
+        android:text="Here are some to indicate that you’re an Endomorph:*Your shoulders are wider than your hips,*Your forearms are on the thicker side**Your body looks round and soft,If you grip your wrist between your thumb and middle finger, the 2 fingers don’t touchYou can gain weight fairly easily, but find it quite difficult to loseThe circumference of your chest is over 44 inches This means that your biggest concern will be adopting a lifestyle where you don’t put on excess fat – and,if you’re currently holding onto a few extra pounds, adopting a workout and diet program that will help you lose it." />
+
+    <TextView
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button6"
+        android:layout_marginTop="-3dp"
+        android:background="@color/colorPrimary"
+        android:text="mesomorph" />
+
+    <TextView
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="-1dp"
+        android:background="@color/colorPrimaryLight"
+        android:text="Here are some to indicate that you’re an mesomorph:*your shoulders are roughly the same width as your hips*Your forearms are moderately thick**Your body looks rugged and squarish in shape*You can gain or lose weight without too many issues*The circumference of your chest is between 37-44 inches,  you are likely going to find it easier to maintain a lean, muscular body than the other 2 types.In terms of your training, you should focus on a well-constructed strength training program, along with moderate amounts of cardiovascular exercise.Diet-wise, you likely won’t have to eat too much extra food to gain muscle mass," />
+
+    <TextView
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button4"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimary"
+        android:text="ectomorph" />
+
+    <TextView
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="-1dp"
+        android:background="@color/colorPrimaryLight"
+        android:text="Here are the common characteristics of Ectomorphs:*Your shoulders are narrower than your hips,*Your forearms are on the smallish side *Your body tends to stay skinny by default,*Your body looks long and narrow,*The circumference of your chest is 37 inches or lessIf you are an Ectomorph, you are likely going to have to eat more calories than either of the other 2 body types if you want to consistently put on muscle.You should focus primarily on heavy weight lifting, and keep cardio to a bare minimum – especially if you are having trouble gaining muscle." />
+</RelativeLayout>
