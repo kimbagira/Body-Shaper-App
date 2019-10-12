@@ -24,7 +24,7 @@ a log in form
 
 
 output
-*body types and sports .
+*body types and sports 
 
 ## LINK OF MY REPOSITORY
 https://github.com/kimbagira/Body-Shaper-App
