@@ -17,12 +17,12 @@ public class AboutUsActivity extends AppCompatActivity {
     private String[] sports = new String[] {"HERE ARE SOME SPORT",
             "ENDOMORPH:",
             "Instead of trying to jog consider",
-            "*race walking, *swimming,* rowing and cycling.*Strength training.",
+            "*race walking,swimming,rowing and cycling and Strength training.",
             "MESOMORPH:",
-            "*excel at weightlifting, *bodybuilding and power sports",
+            "excel at weightlifting,bodybuilding and power sports",
             "ECTOMORPH:",
-            "*swimming, *soccer, *long distance running, *marathon running",
-            "triathlons and cycling, *basketball, *tennis and gymnastics."};
+            "swimming,soccer,long distance running,marathon running",
+            "triathlons and cycling,basketball,tennis and gymnastics."};
 
 
     @Override
