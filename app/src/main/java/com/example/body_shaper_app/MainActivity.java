@@ -36,5 +36,3 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
-//  intent.putExtra("fitness", fitness);
-//  String fitness = LocationTextView.getText().toString();
