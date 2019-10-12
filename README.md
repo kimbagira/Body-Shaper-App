@@ -20,7 +20,7 @@ behaviour
 
 input
 
-a log in form
+a log in form.
 
 
 output
