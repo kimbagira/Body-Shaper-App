@@ -9,7 +9,7 @@ kimbagira sylvie
 you have to enter your email and password and login
 
 ## SETUP/REQUIREMENTS
-to log in 
+to log in by entering my email
 
 
 ## BDD
