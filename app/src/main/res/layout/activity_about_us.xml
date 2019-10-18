@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -78,7 +77,6 @@
         android:textColor="@color/colorPrimaryText"
         android:textSize="17sp"
         android:textStyle="italic" />
-
 
     <TextView
         android:id="@+id/button3"
