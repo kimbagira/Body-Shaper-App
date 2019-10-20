@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<!--
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -99,16 +100,13 @@
         android:textColor="@color/colorPrimaryText"
         android:textSize="17sp"
         android:textStyle="italic" />
+-->
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
-        android:layout_height="149dp"
-        android:layout_below="@+id/button5"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="-1dp"
-        android:layout_marginEnd="-1dp"
-        android:layout_marginRight="-1dp" />
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>

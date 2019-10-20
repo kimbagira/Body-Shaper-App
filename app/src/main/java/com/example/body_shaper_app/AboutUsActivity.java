@@ -11,28 +11,22 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AboutUsActivity extends AppCompatActivity {
-    private TextView LocationTextView;
-    private ListView ListView;
-    private String[] sports = new String[] {"HERE ARE SOME SPORT",
-            "ENDOMORPH:",
-            "Instead of trying to jog consider",
-            "*race walking,swimming,rowing and cycling and Strength training.",
-            "MESOMORPH:",
-            "excel at weightlifting,bodybuilding and power sports",
-            "ECTOMORPH:",
-            "swimming,soccer,long distance running,marathon running",
-            "triathlons and cycling,basketball,tennis and gymnastics."};
+import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class AboutUsActivity extends AppCompatActivity {
+    private TextView mLocationTextView;
+    private ListView ListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         ListView = (ListView) findViewById(R.id.listView);
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, sports);
-        ListView.setAdapter(adapter);
+        mLocationTextView = (TextView) findViewById(R.id.locationEditText3);
 
 
         ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -41,7 +35,50 @@ public class AboutUsActivity extends AppCompatActivity {
                 String sport = ((TextView)view).getText().toString();
                 Toast.makeText(AboutUsActivity.this, sport, Toast.LENGTH_LONG).show();
             }
+
+
+        });
+        Intent intent = getIntent();
+        String location = intent.getStringExtra("location");
+
+//            here we are creating a client object and using it to make a request to the Yelp API
+
+        YelpApi client = YelpClient.getClient();
+
+        Call<YelpBusinessesSearchResponse> call = client.getRestaurants(location, "gyms");
+
+        call.enqueue(new Callback<YelpBusinessesSearchResponse>() {
+            @Override
+            public void onResponse(Call<YelpBusinessesSearchResponse> call, Response<YelpBusinessesSearchResponse> response) {
+                if (response.isSuccessful()) {
+                    List<Business> restaurantsList = response.body().getBusinesses();
+                    String[] gyms = new String[restaurantsList.size()];
+                    String[] categories = new String[restaurantsList.size()];
+
+                    for (int i = 0; i < gyms.length; i++){
+                        gyms[i] = restaurantsList.get(i).getName();
+                    }
+
+                    for (int i = 0; i < categories.length; i++) {
+                        Category category = restaurantsList.get(i).getCategories().get(0);
+                        categories[i] = category.getTitle();
+                    }
+
+                    BodyShaperArrayAdapter adapter = new BodyShaperArrayAdapter(AboutUsActivity.this, android.R.layout.simple_list_item_1,gyms, categories);
+                    ListView.setAdapter(adapter);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<YelpBusinessesSearchResponse> call, Throwable t) {
+
+            }
+
         });
 
+
+
     }
+
 }

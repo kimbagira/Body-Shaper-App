@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorTextIcons"
         android:hint="Enter your email"
@@ -45,6 +45,20 @@
         android:layout_marginBottom="10dp"
         android:background="@color/colorTextIcons"
         android:hint="Enter your password"
+        android:textSize="35sp"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp" />
+
+
+    <EditText
+        android:id="@+id/locationEditText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locationEditText2"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorTextIcons"
+        android:hint="Enter location"
         android:textSize="35sp"
         android:layout_centerHorizontal="true"
         android:padding="5dp" />

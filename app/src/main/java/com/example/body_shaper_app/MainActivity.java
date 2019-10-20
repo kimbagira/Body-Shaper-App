@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private Button mLoginButton;
-    private EditText LocationEditView;
+    private EditText mLocationEditText3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +19,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mLoginButton = (Button) findViewById(R.id.loginButton);
+        mLocationEditText3=(EditText) findViewById(R.id.locationEditText3);
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
+                String location = mLocationEditText3.getText().toString();
                 Intent intent = new Intent(MainActivity.this , AboutUsActivity.class);
+                intent.putExtra("location", location);
                 startActivity(intent);
 
             }
