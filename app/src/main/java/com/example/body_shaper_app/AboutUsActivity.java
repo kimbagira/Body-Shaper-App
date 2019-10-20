@@ -8,18 +8,25 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AboutUsActivity extends AppCompatActivity {
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    @BindView(R.id.progressBar)
+    ProgressBar mProgressBar;
     private TextView mLocationTextView;
     private ListView ListView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +34,7 @@ public class AboutUsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_us);
         ListView = (ListView) findViewById(R.id.listView);
         mLocationTextView = (TextView) findViewById(R.id.locationEditText3);
-
+        ButterKnife.bind(this);
 
         ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -50,7 +57,9 @@ public class AboutUsActivity extends AppCompatActivity {
         call.enqueue(new Callback<YelpBusinessesSearchResponse>() {
             @Override
             public void onResponse(Call<YelpBusinessesSearchResponse> call, Response<YelpBusinessesSearchResponse> response) {
+                hideProgressBar();
                 if (response.isSuccessful()) {
+
                     List<Business> restaurantsList = response.body().getBusinesses();
                     String[] gyms = new String[restaurantsList.size()];
                     String[] categories = new String[restaurantsList.size()];
@@ -72,13 +81,31 @@ public class AboutUsActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<YelpBusinessesSearchResponse> call, Throwable t) {
-
+                hideProgressBar();
+                showFailureMessage();
             }
 
         });
-
-
-
     }
+
+    private void showFailureMessage() {
+        mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void showUnsuccessfulMessage() {
+        mErrorTextView.setText("Something went wrong. Please try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void showRestaurants() {
+        ListView.setVisibility(View.VISIBLE);
+        mLocationTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        mProgressBar.setVisibility(View.GONE);
+    }
+
 
 }
