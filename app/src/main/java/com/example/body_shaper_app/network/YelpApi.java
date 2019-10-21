@@ -1,4 +1,6 @@
-package com.example.body_shaper_app;
+package com.example.body_shaper_app.network;
+
+import com.example.body_shaper_app.models.YelpBusinessesSearchResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

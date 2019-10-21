@@ -1,9 +1,15 @@
 
-package com.example.body_shaper_app;
+package com.example.body_shaper_app.models;
 
-import java.util.List;
+import androidx.versionedparcelable.ParcelField;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
+import org.parceler.Parcel;
+
+
+@Parcel
 
 public class Business {
 
@@ -55,13 +61,13 @@ public class Business {
 
     /**
      * No args constructor for use in serialization
-     * 
+     *
      */
     public Business() {
     }
 
     /**
-     * 
+     *
      * @param distance
      * @param rating
      * @param coordinates

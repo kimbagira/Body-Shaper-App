@@ -1,13 +1,14 @@
-package com.example.body_shaper_app;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.body_shaper_app.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.body_shaper_app.R;
 
 public class MainActivity extends AppCompatActivity {
     private Button mLoginButton;

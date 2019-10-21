@@ -1,12 +1,14 @@
 
-package com.example.body_shaper_app;
+package com.example.body_shaper_app.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-import java.util.Properties;
+import org.parceler.Parcel;
 
+import java.util.List;
+
+@Parcel
 public class YelpBusinessesSearchResponse {
 
     @SerializedName("total")

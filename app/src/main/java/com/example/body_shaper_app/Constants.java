@@ -1,5 +1,7 @@
 package com.example.body_shaper_app;
 
+import com.example.body_shaper_app.BuildConfig;
+
 public class Constants {
     public static final String YELP_BASE_URL = "https://api.yelp.com/v3/";
 //    reference the Yelp credentials in our gradle.properties file

@@ -1,4 +1,4 @@
-package com.example.body_shaper_app;
+package com.example.body_shaper_app.network;
 
 import java.io.IOException;
 
@@ -11,6 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.example.body_shaper_app.Constants.YELP_API_KEY;
 import static com.example.body_shaper_app.Constants.YELP_BASE_URL;
+
 // to make network requests to our API
 public class YelpClient {
 

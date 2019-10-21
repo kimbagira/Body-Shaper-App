@@ -1,16 +1,23 @@
-package com.example.body_shaper_app;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.body_shaper_app.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.body_shaper_app.BodyShaperArrayAdapter;
+import com.example.body_shaper_app.R;
+import com.example.body_shaper_app.models.Business;
+import com.example.body_shaper_app.models.Category;
+import com.example.body_shaper_app.models.YelpBusinessesSearchResponse;
+import com.example.body_shaper_app.network.YelpApi;
+import com.example.body_shaper_app.network.YelpClient;
 
 import java.util.List;
 
