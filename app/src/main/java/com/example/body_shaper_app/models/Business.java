@@ -1,16 +1,16 @@
 
 package com.example.body_shaper_app.models;
 
-import androidx.versionedparcelable.ParcelField;
+
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
+
 import org.parceler.Parcel;
 
+import java.util.List;
 
 @Parcel
-
 public class Business {
 
     @SerializedName("rating")

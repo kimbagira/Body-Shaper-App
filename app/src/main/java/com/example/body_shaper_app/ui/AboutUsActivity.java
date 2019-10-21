@@ -46,15 +46,18 @@ public class AboutUsActivity extends AppCompatActivity {
         ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+       Intent intent = new Intent(AboutUsActivity.this, AboutUsDetailActivity.class);
                 String sport = ((TextView)view).getText().toString();
                 Toast.makeText(AboutUsActivity.this, sport, Toast.LENGTH_LONG).show();
+                startActivity(intent);
+
             }
 
 
         });
+
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
-
 //            here we are creating a client object and using it to make a request to the Yelp API
 
         YelpApi client = YelpClient.getClient();
