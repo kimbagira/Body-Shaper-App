@@ -3,12 +3,13 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/imageView"
-            android:src="@drawable/kimba1"
-            android:scaleType="centerCrop" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/kimba1"
+        android:scaleType="centerCrop" />
 
 
     <TextView
@@ -23,38 +24,12 @@
         android:textSize="35sp"
         android:layout_centerHorizontal="true"/>
 
-    <EditText
-        android:id="@+id/locationEditText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/colorTextIcons"
-        android:hint="Enter your email"
-        android:textSize="35sp"
-        android:layout_centerHorizontal="true"
-        android:padding="5dp" />
-
-    <EditText
-        android:id="@+id/locationEditText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/locationEditText1"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/colorTextIcons"
-        android:hint="Enter your password"
-        android:textSize="35sp"
-        android:layout_centerHorizontal="true"
-        android:padding="5dp" />
-
 
     <EditText
         android:id="@+id/locationEditText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/locationEditText2"
+
         android:layout_marginTop="32dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorTextIcons"
@@ -73,6 +48,5 @@
         android:textSize="35sp"
         android:layout_marginBottom="50dp"
         android:text="LogIn" />
-
 
 </RelativeLayout>

@@ -17,8 +17,8 @@ public class Gym {
     public Gym(){}
 
     public Gym(String name, String phone, String website,
-                      double rating, String imageUrl, ArrayList<String> address,
-                      double latitude, double longitude, ArrayList<String> categories ){
+               double rating, String imageUrl, ArrayList<String> address,
+               double latitude, double longitude, ArrayList<String> categories ){
         this.name = name;
         this.phone = phone;
         this.website = website;

@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.AboutUsDetailActivity">
 
-<!--    will act as a container to hold our fragment-->
+    <!--    will act as a container to hold our fragment-->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-<!--        will create a header at the top of our ViewPager which will eventually display the current restaurant's name.-->
+        <!--        will create a header at the top of our ViewPager which will eventually display the current restaurant's name.-->
         <androidx.viewpager.widget.PagerTabStrip
             android:id="@+id/pagerHeader"
             android:layout_width="match_parent"

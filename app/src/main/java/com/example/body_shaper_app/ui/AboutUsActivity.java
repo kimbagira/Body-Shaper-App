@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.body_shaper_app.BodyShaperArrayAdapter;
 import com.example.body_shaper_app.Constants;
@@ -32,14 +33,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AboutUsActivity extends AppCompatActivity {
-    private SharedPreferences mSharedPreferences;
-    private String mRecentAddress;
-
+//    private SharedPreferences mSharedPreferences;
+//    private String mRecentAddress;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
-    private TextView mLocationTextView;
     private ListView ListView;
+    public List<Business> gyms;
 
 
     @Override
@@ -47,7 +47,6 @@ public class AboutUsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         ListView = (ListView) findViewById(R.id.listView);
-        mLocationTextView = (TextView) findViewById(R.id.locationEditText3);
         ButterKnife.bind(this);
 
 
@@ -66,6 +65,9 @@ public class AboutUsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
+        getgyms(location);
+
+
 //            here we are creating a client object and using it to make a request to the Yelp API
 
         YelpApi client = YelpClient.getClient();
@@ -93,7 +95,11 @@ public class AboutUsActivity extends AppCompatActivity {
 
                     BodyShaperArrayAdapter adapter = new BodyShaperArrayAdapter(AboutUsActivity.this, android.R.layout.simple_list_item_1,gyms, categories);
                     ListView.setAdapter(adapter);
+                    showGyms();
 
+                }
+                else {
+                    showUnsuccessfulMessage();
                 }
             }
 
@@ -104,12 +110,12 @@ public class AboutUsActivity extends AppCompatActivity {
             }
 
         });
-
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
-        if (mRecentAddress != null) {
-            getgyms(mRecentAddress);
-        }
+//
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+//        if (mRecentAddress != null) {
+//            getgyms(mRecentAddress);
+//        }
 
     }
 
@@ -136,9 +142,8 @@ public class AboutUsActivity extends AppCompatActivity {
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
-    private void showRestaurants() {
+    private void showGyms() {
         ListView.setVisibility(View.VISIBLE);
-        mLocationTextView.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {

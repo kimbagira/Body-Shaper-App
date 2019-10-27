@@ -26,7 +26,7 @@ public class AboutUsDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us_detail);
         ButterKnife.bind(this);
-int Fragment = 0;
+        int Fragment = 0;
 
 
         mgym = Parcels.unwrap(getIntent().getParcelableExtra("gym"));

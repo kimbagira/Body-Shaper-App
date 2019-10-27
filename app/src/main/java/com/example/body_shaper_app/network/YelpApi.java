@@ -13,4 +13,3 @@ public interface YelpApi {
             @Query("term") String term
     );
 }
-

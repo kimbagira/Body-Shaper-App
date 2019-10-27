@@ -39,7 +39,7 @@ public class AboutUsDetailFragment extends Fragment implements View.OnClickListe
     @BindView(R.id.savegymButton) TextView msavegymButton;
 
     private Business mgym;
-//    newInstance(), is used instead of a constructor and returns a new instance of our AboutUsDetailFragment
+    //    newInstance(), is used instead of a constructor and returns a new instance of our AboutUsDetailFragment
     public static AboutUsDetailFragment newInstance(Business mgym) {
         AboutUsDetailFragment AboutUsDetailFragment = new AboutUsDetailFragment();
         Bundle args = new Bundle();
@@ -53,7 +53,7 @@ public class AboutUsDetailFragment extends Fragment implements View.OnClickListe
         super.onCreate(savedInstanceState);
         mgym = Parcels.unwrap(getArguments().getParcelable("gym"));
     }
-//this AboutUs object is then used to set our ImageView and TextViews.
+    //this AboutUs object is then used to set our ImageView and TextViews.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about_us_detail, container, false);
@@ -82,26 +82,26 @@ public class AboutUsDetailFragment extends Fragment implements View.OnClickListe
         return view;
 
     }
-//for the implicity intent
-        @Override
-        public void onClick(View v) {
-            if (v == mWebsiteLabel) {
-                Intent webIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(mgym.getUrl()));
-                startActivity(webIntent);
-            }
-            if (v == mPhoneLabel) {
-                Intent phoneIntent = new Intent(Intent.ACTION_DIAL,
-                        Uri.parse("tel:" + mgym.getPhone()));
-                startActivity(phoneIntent);
-            }
-            if (v == mAddressLabel) {
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("geo:" + mgym.getCoordinates().getLatitude()
-                                + "," + mgym.getCoordinates().getLongitude()
-                                + "?q=(" + mgym.getName() + ")"));
-                startActivity(mapIntent);
-            }
-
+    //for the implicity intent
+    @Override
+    public void onClick(View v) {
+        if (v == mWebsiteLabel) {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(mgym.getUrl()));
+            startActivity(webIntent);
         }
+        if (v == mPhoneLabel) {
+            Intent phoneIntent = new Intent(Intent.ACTION_DIAL,
+                    Uri.parse("tel:" + mgym.getPhone()));
+            startActivity(phoneIntent);
+        }
+        if (v == mAddressLabel) {
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("geo:" + mgym.getCoordinates().getLatitude()
+                            + "," + mgym.getCoordinates().getLongitude()
+                            + "?q=(" + mgym.getName() + ")"));
+            startActivity(mapIntent);
+        }
+
+    }
 }
