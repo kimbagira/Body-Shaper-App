@@ -32,6 +32,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.registerTextView) TextView mRegisterTextView;
 
     private FirebaseAuth mAuth;
+        private FirebaseAuth.AuthStateListener mAuthListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
      private void loginWithPassword() {
-        
+
          String email = mEmailEditText.getText().toString().trim();
          String password = mPasswordEditText.getText().toString().trim();
          if (email.equals("")) {
