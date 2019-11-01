@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "370147397628",
+    "firebase_url": "https://body-shaper-app.firebaseio.com",
+    "project_id": "body-shaper-app",
+    "storage_bucket": "body-shaper-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370147397628:android:d66722198fc17fd8bd6c79",
+        "android_client_info": {
+          "package_name": "com.example.body_shaper_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370147397628-t0tg1d2e52o70gbk244h3ud3mg91eehv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.body_shaper_app",
+            "certificate_hash": "c5c518c2760a49f6c6dff1969dbcf79621ae476e"
+          }
+        },
+        {
+          "client_id": "370147397628-gfr55tv3ririn483ikvq4hj29ittd6im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOcejlfVwqIFgH6O7Nvd6xW8ksDkhiocA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370147397628-gfr55tv3ririn483ikvq4hj29ittd6im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

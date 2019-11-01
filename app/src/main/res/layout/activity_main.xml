@@ -3,13 +3,12 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/imageView"
-            android:src="@drawable/kimba1"
-            android:scaleType="centerCrop" />
-
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/kimba1" />
 
     <TextView
         android:id="@+id/textView"
@@ -28,26 +27,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="26dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorTextIcons"
         android:hint="Enter your email"
-        android:textSize="35sp"
+        android:padding="5dp"
         android:layout_centerHorizontal="true"
-        android:padding="5dp" />
+        android:textSize="35sp" />
+
 
     <EditText
         android:id="@+id/locationEditText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/locationEditText1"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="25dp"
         android:background="@color/colorTextIcons"
         android:hint="Enter your password"
-        android:textSize="35sp"
+        android:padding="5dp"
         android:layout_centerHorizontal="true"
-        android:padding="5dp" />
+        android:textSize="35sp" />
 
 
     <EditText
@@ -55,24 +55,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/locationEditText2"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorTextIcons"
         android:hint="Enter location"
-        android:textSize="35sp"
+        android:padding="5dp"
         android:layout_centerHorizontal="true"
-        android:padding="5dp" />
+        android:textSize="35sp" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="87dp"
         android:background="@color/colorPrimary"
-        android:textSize="35sp"
-        android:layout_marginBottom="50dp"
-        android:text="LogIn" />
+        android:text="LogIn"
+        android:layout_centerHorizontal="true"
+        android:textSize="35sp" />
 
-
+    <Button
+        android:id="@+id/savedgymsButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:background="@color/colorPrimary"
+        android:text="My Saved gyms"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorTextIcons"
+        android:visibility="visible" />
 </RelativeLayout>
