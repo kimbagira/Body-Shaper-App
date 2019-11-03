@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.body_shaper_app.R;
-import com.example.body_shaper_app.models.Gym;
+import com.example.body_shaper_app.models.Business;
 import com.example.body_shaper_app.ui.AboutUsDetailActivity;
 import com.squareup.picasso.Picasso;
 
@@ -23,12 +23,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AboutUsListAdapter extends RecyclerView.Adapter<AboutUsListAdapter.AboutUsViewHolder>{
-    private ArrayList<Gym> mGym = new ArrayList<>();
+    private ArrayList<Business> mGym;
     private Context mContext;
 
-    public AboutUsListAdapter(Context context, ArrayList<Gym> gyms){
-        mContext = context;
-        mGym = gyms;
+    public AboutUsListAdapter(ArrayList<Business> mGym, Context mContext) {
+        this.mGym = mGym;
+        this.mContext = mContext;
     }
 
     @Override
@@ -49,9 +49,9 @@ public class AboutUsListAdapter extends RecyclerView.Adapter<AboutUsListAdapter.
     }
 
     public class AboutUsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        @BindView(R.id.restaurantImageView)
+        @BindView(R.id.gymImageView)
         ImageView mGymImageView;
-        @BindView(R.id.restaurantNameTextView)
+        @BindView(R.id.gymNameTextView)
         TextView mNameTextView;
         @BindView(R.id.categoryTextView) TextView mCategoryTextView;
         @BindView(R.id.ratingTextView) TextView mRatingTextView;
@@ -65,9 +65,9 @@ public class AboutUsListAdapter extends RecyclerView.Adapter<AboutUsListAdapter.
             itemView.setOnClickListener(this);
         }
 
-        public void bindGym(Gym gym) {
+        public void bindGym(Business gym) {
             mNameTextView.setText(gym.getName());
-            mCategoryTextView.setText(gym.getCategories().get(0));
+            mCategoryTextView.setText(gym.getCategories().get(0).getTitle());
             mRatingTextView.setText("Rating: " + gym.getRating() + "/5");
             Picasso.get().load(gym.getImageUrl()).into(mGymImageView);
         }

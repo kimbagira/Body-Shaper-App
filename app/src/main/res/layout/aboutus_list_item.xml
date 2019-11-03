@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="130dp"
         android:layout_height="100dp"
-        android:id="@+id/restaurantImageView"
+        android:id="@+id/gymImageView"
         android:src="@drawable/kimba1"
         android:scaleType="centerCrop"/>
 
@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/restaurantNameTextView"
+            android:id="@+id/gymNameTextView"
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="Gym Name"

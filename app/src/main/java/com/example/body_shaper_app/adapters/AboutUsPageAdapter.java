@@ -7,15 +7,14 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.body_shaper_app.models.Business;
 import com.example.body_shaper_app.ui.AboutUsDetailFragment;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AboutUsPageAdapter extends FragmentPagerAdapter {
     private List<Business> mgym;
     public AboutUsPageAdapter(FragmentManager fm, int behavior, List<Business>gym) {
-super(fm);
+        super(fm);
         mgym =gym;
-     }
+    }
 
     @Override
     public Fragment getItem(int position) {

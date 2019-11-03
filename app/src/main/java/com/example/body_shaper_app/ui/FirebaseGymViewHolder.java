@@ -24,8 +24,8 @@ class FirebaseGymViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindGym(Gym gym){
-        mgymImageView = mView.findViewById(R.id.restaurantImageView);
-        TextView nameTextView = mView.findViewById(R.id.restaurantNameTextView);
+        mgymImageView = mView.findViewById(R.id.gymImageView);
+        TextView nameTextView = mView.findViewById(R.id.gymNameTextViewName);
         TextView categoryTextView = mView.findViewById(R.id.categoryTextView);
         TextView ratingTextView = mView.findViewById(R.id.ratingTextView);
 

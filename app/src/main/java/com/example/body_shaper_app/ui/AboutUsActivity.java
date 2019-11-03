@@ -10,15 +10,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.body_shaper_app.BodyShaperArrayAdapter;
 import com.example.body_shaper_app.R;
+import com.example.body_shaper_app.adapters.AboutUsListAdapter;
 import com.example.body_shaper_app.models.Business;
 import com.example.body_shaper_app.models.Category;
 import com.example.body_shaper_app.models.YelpBusinessesSearchResponse;
 import com.example.body_shaper_app.network.YelpApi;
 import com.example.body_shaper_app.network.YelpClient;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -28,36 +32,39 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AboutUsActivity extends AppCompatActivity {
+    @BindView(R.id.recyclerView1) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
     private TextView mLocationTextView;
-    private ListView ListView;
+//    private ListView ListView;
 
+    private AboutUsListAdapter mAdapter;
 
+    public List<Business> gyms;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
-        ListView = (ListView) findViewById(R.id.listView);
+        setContentView(R.layout.activity_aboutus);
+//        ListView = (ListView) findViewById(R.id.listView);
         mLocationTextView = (TextView) findViewById(R.id.locationEditText3);
         ButterKnife.bind(this);
-
-        ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-       Intent intent = new Intent(AboutUsActivity.this, AboutUsDetailActivity.class);
-                String sport = ((TextView)view).getText().toString();
-                Toast.makeText(AboutUsActivity.this, sport, Toast.LENGTH_LONG).show();
-                startActivity(intent);
-
-            }
-
-
-        });
-
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
+//
+//
+//        RecyclerView.setOnClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//       Intent intent = new Intent(AboutUsActivity.this, AboutUsDetailActivity.class);
+//                String sport = ((TextView)view).getText().toString();
+//                Toast.makeText(AboutUsActivity.this, sport, Toast.LENGTH_LONG).show();
+//                startActivity(intent);
+//
+//            }
+//
+//
+//        });
 //            here we are creating a client object and using it to make a request to the Yelp API
 
         YelpApi client = YelpClient.getClient();
@@ -68,24 +75,19 @@ public class AboutUsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<YelpBusinessesSearchResponse> call, Response<YelpBusinessesSearchResponse> response) {
                 hideProgressBar();
+
                 if (response.isSuccessful()) {
+                    gyms = response.body().getBusinesses();
+                    mAdapter = new AboutUsListAdapter((ArrayList<Business>) gyms,AboutUsActivity.this);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(AboutUsActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
 
-                    List<Business> restaurantsList = response.body().getBusinesses();
-                    String[] gyms = new String[restaurantsList.size()];
-                    String[] categories = new String[restaurantsList.size()];
-
-                    for (int i = 0; i < gyms.length; i++){
-                        gyms[i] = restaurantsList.get(i).getName();
-                    }
-
-                    for (int i = 0; i < categories.length; i++) {
-                        Category category = restaurantsList.get(i).getCategories().get(0);
-                        categories[i] = category.getTitle();
-                    }
-
-                    BodyShaperArrayAdapter adapter = new BodyShaperArrayAdapter(AboutUsActivity.this, android.R.layout.simple_list_item_1,gyms, categories);
-                    ListView.setAdapter(adapter);
-
+                    showRestaurants();
+                } else {
+                    showUnsuccessfulMessage();
                 }
             }
 
@@ -109,13 +111,10 @@ public class AboutUsActivity extends AppCompatActivity {
     }
 
     private void showRestaurants() {
-        ListView.setVisibility(View.VISIBLE);
-        mLocationTextView.setVisibility(View.VISIBLE);
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {
         mProgressBar.setVisibility(View.GONE);
     }
-
-
 }
