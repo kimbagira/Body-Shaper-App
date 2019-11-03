@@ -11,9 +11,9 @@ import java.util.List;
 
 public class AboutUsPageAdapter extends FragmentPagerAdapter {
     private List<Business> mgym;
-    public AboutUsPageAdapter(FragmentManager fm, int behavior, List<Business>gym) {
+    public AboutUsPageAdapter(FragmentManager fm, List<Business>gym) {
         super(fm);
-        mgym =gym;
+        mgym = gym;
     }
 
     @Override
@@ -32,3 +32,4 @@ public class AboutUsPageAdapter extends FragmentPagerAdapter {
     }
 
 }
+

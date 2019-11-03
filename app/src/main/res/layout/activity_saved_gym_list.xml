@@ -50,6 +50,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/colorPrimary"/>
+
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

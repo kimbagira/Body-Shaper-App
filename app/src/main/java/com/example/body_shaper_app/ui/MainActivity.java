@@ -1,9 +1,12 @@
 
 package com.example.body_shaper_app.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -27,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                @SuppressLint("ResourceType") Animation animate= AnimationUtils.loadAnimation(MainActivity.this,R.animator.bouncing_animation);
+                mLoginButton.startAnimation(animate);
                 String location = mLocationEditText3.getText().toString();
                 Intent intent = new Intent(MainActivity.this , AboutUsActivity.class);
                 intent.putExtra("location", location);
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         mSavedgymsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this , SavedGymListActivity.class);
+                Intent intent = new Intent(MainActivity.this , AboutUsDetailFragment.class);
                 startActivity(intent);
 
             }

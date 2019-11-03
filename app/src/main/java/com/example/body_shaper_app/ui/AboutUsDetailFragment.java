@@ -1,6 +1,5 @@
 package com.example.body_shaper_app.ui;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -39,6 +38,7 @@ public class AboutUsDetailFragment extends Fragment implements View.OnClickListe
     @BindView(R.id.savegymButton) TextView msavegymButton;
 
     private Business mgym;
+    private List<Business> gym;
 //    newInstance(), is used instead of a constructor and returns a new instance of our AboutUsDetailFragment
     public static AboutUsDetailFragment newInstance(Business mgym) {
         AboutUsDetailFragment AboutUsDetailFragment = new AboutUsDetailFragment();

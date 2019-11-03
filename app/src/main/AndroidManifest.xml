@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.SavedGymListActivity"></activity>
-        <activity android:name=".ui.AboutUsDetailActivity" />
+        <activity android:name=".ui.AboutUsDetailActivity"></activity>
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -78,7 +78,7 @@ public class AboutUsActivity extends AppCompatActivity {
 
                 if (response.isSuccessful()) {
                     gyms = response.body().getBusinesses();
-                    mAdapter = new AboutUsListAdapter((ArrayList<Business>) gyms,AboutUsActivity.this);
+                    mAdapter = new AboutUsListAdapter(AboutUsActivity.this, gyms);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager =
                             new LinearLayoutManager(AboutUsActivity.this);

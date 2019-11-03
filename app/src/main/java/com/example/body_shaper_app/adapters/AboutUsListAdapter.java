@@ -18,17 +18,18 @@ import com.squareup.picasso.Picasso;
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AboutUsListAdapter extends RecyclerView.Adapter<AboutUsListAdapter.AboutUsViewHolder>{
-    private ArrayList<Business> mGym;
+    private List<Business> mGym;
     private Context mContext;
 
-    public AboutUsListAdapter(ArrayList<Business> mGym, Context mContext) {
-        this.mGym = mGym;
-        this.mContext = mContext;
+    public AboutUsListAdapter(Context context, List<Business> Gym) {
+        mContext = context;
+        mGym = Gym;
     }
 
     @Override
