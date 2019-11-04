@@ -35,27 +35,4 @@ class FirebaseGymViewHolder extends RecyclerView.ViewHolder {
         Picasso.get().load(gym.getImageUrl()).into(mgymImageView);
     }
 
-    public void bindRestaurant(Gym gym){
-        mgymImageView = mView.findViewById(R.id.gymImageView);
-        TextView nameTextView = mView.findViewById(R.id.gymNameTextView);
-        TextView categoryTextView = mView.findViewById(R.id.categoryTextView);
-        TextView ratingTextView = mView.findViewById(R.id.ratingTextView);
-
-        nameTextView.setText(gym.getName());
-        categoryTextView.setText(gym.getCategories().get(0));
-        ratingTextView.setText("Rating: " + gym.getRating() + "/5");
-        Picasso.get().load(gym.getImageUrl()).into(mgymImageView);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 }
